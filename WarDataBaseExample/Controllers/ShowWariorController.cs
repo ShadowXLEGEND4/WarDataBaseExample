@@ -16,5 +16,39 @@ namespace WarDataBaseExample.Controllers
                 return ex.Wariors.ToList();
             }
         }
+        public void CreateWarior(Warior w)
+        {
+            using (WariorDBEntities db = new WariorDBEntities())
+            {
+                var lastWarior = db.Wariors.ToList().LastOrDefault();
+                if (lastWarior == null)
+                {
+                    lastWarior = new Warior();
+                    lastWarior.Id = 0;
+                }
+
+                w.Id = lastWarior.Id + 1;
+                db.Wariors.Add(w);
+                db.SaveChanges();
+            }
+        }
+
+        public void Deletewarior(int id)
+        {
+            using (WariorDBEntities ex = new WariorDBEntities())
+            {
+                var wariorDelete = ex.Wariors.Where(w => w.Id == id).FirstOrDefault();
+                if (wariorDelete != null)
+                {
+                    ex.Wariors.Remove(wariorDelete);
+                    ex.SaveChanges();
+                }
+            }
+        }
+
+        internal static void DeleteWarior(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
