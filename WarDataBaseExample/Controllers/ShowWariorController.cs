@@ -33,7 +33,7 @@ namespace WarDataBaseExample.Controllers
             }
         }
 
-        public void Deletewarior(int id)
+        public static void DeleteWarior(int id)
         {
             using (WariorDBEntities ex = new WariorDBEntities())
             {
@@ -44,11 +44,6 @@ namespace WarDataBaseExample.Controllers
                     ex.SaveChanges();
                 }
             }
-        }
-
-        internal static void DeleteWarior(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
