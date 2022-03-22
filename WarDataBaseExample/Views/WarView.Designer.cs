@@ -30,9 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvWarior = new System.Windows.Forms.DataGridView();
-            this.wariorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblKills = new System.Windows.Forms.Label();
+            this.lblHealth = new System.Windows.Forms.Label();
+            this.txtKills = new System.Windows.Forms.TextBox();
+            this.txtHealth = new System.Windows.Forms.TextBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.killsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.healthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wariorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wariorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +58,47 @@
             this.dgvWarior.Size = new System.Drawing.Size(302, 222);
             this.dgvWarior.TabIndex = 0;
             // 
-            // wariorBindingSource
+            // lblKills
             // 
-            this.wariorBindingSource.DataSource = typeof(WarDataBaseExample.Models.Warior);
+            this.lblKills.AutoSize = true;
+            this.lblKills.Location = new System.Drawing.Point(411, 40);
+            this.lblKills.Name = "lblKills";
+            this.lblKills.Size = new System.Drawing.Size(31, 16);
+            this.lblKills.TabIndex = 1;
+            this.lblKills.Text = "Kills";
+            // 
+            // lblHealth
+            // 
+            this.lblHealth.AutoSize = true;
+            this.lblHealth.Location = new System.Drawing.Point(411, 78);
+            this.lblHealth.Name = "lblHealth";
+            this.lblHealth.Size = new System.Drawing.Size(46, 16);
+            this.lblHealth.TabIndex = 2;
+            this.lblHealth.Text = "Health";
+            // 
+            // txtKills
+            // 
+            this.txtKills.Location = new System.Drawing.Point(467, 40);
+            this.txtKills.Name = "txtKills";
+            this.txtKills.Size = new System.Drawing.Size(100, 22);
+            this.txtKills.TabIndex = 3;
+            // 
+            // txtHealth
+            // 
+            this.txtHealth.Location = new System.Drawing.Point(467, 78);
+            this.txtHealth.Name = "txtHealth";
+            this.txtHealth.Size = new System.Drawing.Size(100, 22);
+            this.txtHealth.TabIndex = 4;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(645, 37);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // killsDataGridViewTextBoxColumn
             // 
@@ -72,6 +116,20 @@
             this.healthDataGridViewTextBoxColumn.Name = "healthDataGridViewTextBoxColumn";
             this.healthDataGridViewTextBoxColumn.Width = 125;
             // 
+            // wariorBindingSource
+            // 
+            this.wariorBindingSource.DataSource = typeof(WarDataBaseExample.Models.Warior);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(645, 76);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // WarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -79,6 +137,12 @@
             this.BackgroundImage = global::WarDataBaseExample.Properties.Resources.WarBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.txtHealth);
+            this.Controls.Add(this.txtKills);
+            this.Controls.Add(this.lblHealth);
+            this.Controls.Add(this.lblKills);
             this.Controls.Add(this.dgvWarior);
             this.Name = "WarView";
             this.Text = "WarView";
@@ -86,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarior)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wariorBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +160,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn killsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn healthDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource wariorBindingSource;
+        private System.Windows.Forms.Label lblKills;
+        private System.Windows.Forms.Label lblHealth;
+        private System.Windows.Forms.TextBox txtKills;
+        private System.Windows.Forms.TextBox txtHealth;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
