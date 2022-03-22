@@ -47,5 +47,17 @@ namespace WarDataBaseExample.Views
             ShowWariorController.DeleteWarior(id);
             RefreshTable();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvWarior.CurrentRow;
+            int id = int.Parse(row.Cells["Id"].Value.ToString());
+            Warior warior = new Warior();
+            warior.Id = id;
+            warior.Health = int.Parse(txtHealth.Text);
+            warior.Kills = int.Parse(txtKills.Text);
+            ShowWariorController.UpdateWarior(id, warior);
+            RefreshTable();
+        }
     }
 }

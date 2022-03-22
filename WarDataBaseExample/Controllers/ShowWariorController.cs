@@ -45,5 +45,20 @@ namespace WarDataBaseExample.Controllers
                 }
             }
         }
+
+        public static void UpdateWarior(int id, Warior w)
+        {
+            using (WariorDBEntities ex = new WariorDBEntities())
+            {
+                var wariorUpdate = ex.Wariors.Where(p => p.Id == id).FirstOrDefault();
+                if (wariorUpdate != null)
+                {
+                    wariorUpdate.Id = w.Id;
+                    wariorUpdate.Health = w.Health;
+                    wariorUpdate.Kills = w.Kills;
+                    ex.SaveChanges();
+                }
+            }
+        }
     }
 }
